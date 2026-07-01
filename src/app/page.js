@@ -1,103 +1,77 @@
-import Image from "next/image";
+import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main>
+      {/* Hero */}
+      <section className="py-24 text-center bg-white px-4">
+        <h1
+          className="text-5xl md:text-6xl inline-block mb-4"
+          style={{
+            fontFamily: 'Georgia, "Times New Roman", serif',
+            textDecoration: 'underline',
+            textDecorationColor: '#c44b2a',
+            textDecorationThickness: '3px',
+            textUnderlineOffset: '10px',
+          }}
+        >
+          Eat like Family
+        </h1>
+        <p className="text-lg mt-6 text-gray-700">
+          At Crespo, <strong>our</strong> truck is <strong>your</strong> truck!
+        </p>
+      </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* About */}
+      <section className="grid grid-cols-1 md:grid-cols-2">
+        {/* Truck photo — drop /public/truck.jpg to see your photo here */}
+        <div
+          className="min-h-[400px] md:min-h-[560px]"
+          style={{
+            backgroundImage: 'url(/truck.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundColor: '#c8df90',
+          }}
+        />
+
+        {/* Text */}
+        <div className="flex flex-col justify-center items-center p-12 md:p-16 text-center bg-white">
+          <h2 className="text-4xl font-bold mb-6">Who are we?</h2>
+          <p className="text-base leading-8 max-w-md text-gray-700">
+            Hello! My name is Alberto Perez and my wife&rsquo;s name is Felicita Aguilar.
+            Originally from Oaxaca, Mexico, my wife and I take pride in the delicacies of our
+            culture and have always dreamed of establishing our own food business. Combining
+            culture with decades of restaurant experience made us confident in providing the
+            upmost quality, authenticity and care to our customers. At Crespo, every dish is
+            served with neighborliness and hospitality as if you were members of our family.
+          </p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      {/* Order + Catering CTA */}
+      <section className="py-20 text-center px-4" style={{ backgroundColor: '#f7f7f7' }}>
+        <h2 className="text-3xl font-bold mb-3">Order online or cater your event</h2>
+        <p className="text-gray-600 mb-8 text-base">Delivery, pickup, or the full fiesta — we&rsquo;ve got you covered.</p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a
+            href="https://www.doordash.com/store/crespo-mexican-food-glen-burnie-31768217/46445946/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-10 py-4 text-white font-bold tracking-widest uppercase text-sm transition-opacity hover:opacity-90"
+            style={{ backgroundColor: '#c44b2a', textDecoration: 'none' }}
+          >
+            ORDER ON DOORDASH
+          </a>
+          <Link
+            href="/reservations"
+            className="inline-block px-10 py-4 font-bold tracking-widest uppercase text-sm transition-opacity hover:opacity-90 border-2"
+            style={{ borderColor: '#c44b2a', color: '#c44b2a', textDecoration: 'none' }}
+          >
+            BOOK CATERING
+          </Link>
+        </div>
+      </section>
+    </main>
   );
 }
